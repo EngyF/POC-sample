@@ -20,7 +20,7 @@ public class FunRestcontroller {
 
 @GetMapping("/teaminfo")
 public String getinfo(){
-    return  "coach name is test 2 3 4  5" + coachName +" team name is "+ teamName;
+    return  "coach name is test 2 3 4 5 " + coachName +" team name is "+ teamName;
     }
 
 
