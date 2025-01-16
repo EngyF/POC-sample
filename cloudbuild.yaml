@@ -7,10 +7,7 @@ steps:
     args: ['clean', 'package']
     dir: 'POC-sample'  # The relative path from Cloud Build's workspace (assuming the repository is cloned here)
 
-  - name: "gcr.io/cloud-builders/git"entrypoint: "git"args: ["clone", "https://source.developers.google.com/p/[PROJECT_ID]/r/[REPO_NAME]"]
-  - name: "maven:3.8.5-openjdk-17"entrypoint: mvnargs: ["clean", "install"]
-    dir: "POC-sample" # Directory containing pom.xml
-
+ 
   # 3. Push JAR files to Artifact Registry (Google Cloud Storage)
   - name: 'gcr.io/cloud-builders/gsutil'
     args: [
