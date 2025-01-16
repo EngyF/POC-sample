@@ -18,7 +18,7 @@ steps:
   - name: 'gcr.io/cloud-builders/gsutil'
     args: [
       'cp', 
-      '/target/*.jar', 
+      '/workspace/target/*.jar', 
       'gs://poc-test-buckett'
       #'poc-test-buckett'  # Replace with your Artifact Registry bucket
     ]
