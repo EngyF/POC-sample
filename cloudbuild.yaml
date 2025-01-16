@@ -28,7 +28,7 @@ steps:
     entrypoint: 'bash'
     args:
     - '-c'
-    - 'ls  /workspace/'
+    - 'ls  workspace'
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build', 
