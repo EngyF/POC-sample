@@ -59,3 +59,16 @@ options:
   logging: 'CLOUD_LOGGING_ONLY'  # Use Cloud Logging only for logs (no bucket)
 
 
+steps:
+  - name: "gcr.io/cloud-builders/git"
+    entrypoint: "git"
+    args: ["clone", "https://source.developers.google.com/p/[PROJECT_ID]/r/[REPO_NAME]"]
+
+  - name: "ubuntu"
+    entrypoint: "bash"
+    args: ["-c", "ls -R /workspace"]  # This will list the contents of the /workspace directory
+
+  - name: 'gcr.io/cloud-builders/mvn'
+    entrypoint: 'mvn'
+    args: ['clean', 'package']
+    dir: 'POC-sample/app'  # Update this to correct path
