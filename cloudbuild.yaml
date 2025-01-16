@@ -11,7 +11,7 @@ steps:
   - name: "maven:3.8.5-openjdk-17"
     entrypoint: mvn
     args: ["clean", "install"]
-    dir: "POC-sample"
+    dir: "/workspace/POC-sample"
 
  
   # 3. Push JAR files to Artifact Registry (Google Cloud Storage)
