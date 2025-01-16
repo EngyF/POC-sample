@@ -5,7 +5,7 @@ steps:
   - name: 'gcr.io/cloud-builders/mvn'
     entrypoint: 'mvn'
     args: ['clean', 'package']
-    dir: 'POC-sample'  # The relative path from Cloud Build's workspace (assuming the repository is cloned here)
+    dir: 'POC-sample/app'  # The relative path from Cloud Build's workspace (assuming the repository is cloned here)
   # 3. Push JAR files to Artifact Registry (Google Cloud Storage)
   - name: 'gcr.io/cloud-builders/gsutil'
     args: [
