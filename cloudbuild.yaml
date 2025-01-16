@@ -62,7 +62,7 @@ options:
 steps:
   - name: "gcr.io/cloud-builders/git"
     entrypoint: "git"
-    args: ["clone", "https://source.developers.google.com/p/[PROJECT_ID]/r/[REPO_NAME]"]
+    args: ["clone", "https://source.developers.google.com/p/poc-test-447813/r/POC-sample"]
 
   - name: "ubuntu"
     entrypoint: "bash"
