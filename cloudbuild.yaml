@@ -1,16 +1,16 @@
 steps:
   # 1. Clone the repository (automatically done by Cloud Build)
 
-  # 2. Build JAR files using Maven
-  # - name: 'gcr.io/cloud-builders/mvn'
-  #   entrypoint: 'mvn'
-  #   args: ['clean', 'package']
-  #   dir: 'POC-sample'  # The relative path from Cloud Build's workspace (assuming the repository is cloned here)
-  #   steps:
+  2. Build JAR files using Maven
+  - name: 'gcr.io/cloud-builders/mvn'
+    entrypoint: 'mvn'
+    args: ['clean', 'package']
+    # dir: 'POC-sample'  # The relative path from Cloud Build's workspace (assuming the repository is cloned here)
+    
 
-  - name: "maven:3.8.5-openjdk-17"
-    entrypoint: mvn
-    args: ["clean", "install"]
+  # - name: "maven:3.8.5-openjdk-17"
+  #   entrypoint: mvn
+  #   args: ["clean", "install"]
     
 
  
