@@ -11,7 +11,8 @@ steps:
     args: [
       'cp', 
       'POC-sample/target/*.jar', 
-      'poc-test-buckett'  # Replace with your Artifact Registry bucket
+      'gs://poc-test-buckett'
+      #'poc-test-buckett'  # Replace with your Artifact Registry bucket
     ]
 
   # 4. Build the Docker container image for the Spring Boot application
