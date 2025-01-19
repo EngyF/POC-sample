@@ -28,6 +28,8 @@ steps:
       '.'
     ]
     dir: '/workspace/'  # Set the directory to the Spring Boot project directory
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['images']  # This will list all locally available images
 
   # 5. Push the Docker container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
