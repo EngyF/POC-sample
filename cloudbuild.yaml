@@ -29,6 +29,8 @@ steps:
         ".",
       ]
     dir: "/workspace/" # Set the directory to the Spring Boot project directory
+
+  #list all locally available images for logging
   - name: "gcr.io/cloud-builders/docker"
     args: ["images"] # This will list all locally available images
 
@@ -60,7 +62,7 @@ substitutions:
   _IMAGE_NAME: "poc-test"
   _PROJECT_ID: "poc-test-447813"
   _SHORT_SHA: "${SHORT_SHA}"
-  _RELEASE_NAME: "v1-0-0" # Specify your release version
+  _RELEASE_NAME: "v-${SHORT_SHA}" # Specify your release version
   _PIPELINE: "poc-pipeline" # The pipeline name created in Cloud Deploy
   _REPO_NAME: "poc-test" # The repository name for your Docker image
 
