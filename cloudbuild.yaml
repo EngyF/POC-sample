@@ -40,6 +40,7 @@ steps:
         "us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
       ]
 
+
   # 6. (Optional) Trigger Cloud Deploy (if deploying via Cloud Deploy)
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gcloud"
