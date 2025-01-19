@@ -11,10 +11,6 @@ steps:
   # - name: "maven:3.8.5-openjdk-17"
   #   entrypoint: mvn
   #   args: ["clean", "install"]
-  # 2. Verify the JAR file exists in the target/ directory
-  - name: 'gcr.io/cloud-builders/bash'
-    args: ['-c', 'ls -R /workspace/target']
-
   # 3. Push JAR files to Artifact Registry (Google Cloud Storage)
   - name: 'gcr.io/cloud-builders/gsutil'
     args: [
