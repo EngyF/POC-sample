@@ -24,7 +24,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build', 
-      '-t', 'us-central1-docker.pkg.dev/poc-test-447813/${_IMAGE_NAME}:${_COMMIT_SHA}',
+      '-t', 'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_COMMIT_SHA}',
       '.'
     ]
     dir: '/workspace/'  # Set the directory to the Spring Boot project directory
@@ -33,7 +33,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'push', 
-      'us-central1-docker.pkg.dev/poc-test-447813/${_IMAGE_NAME}:${_COMMIT_SHA}'
+      'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_COMMIT_SHA}'
     ]
 
   # 6. (Optional) Trigger Cloud Deploy (if deploying via Cloud Deploy)
@@ -58,6 +58,7 @@ substitutions:
   _COMMIT_SHA: v1.0
   _RELEASE_NAME: 'v1.0.0'  # Specify your release version
   _PIPELINE: 'my-pipeline'  # The pipeline name created in Cloud Deploy
+  _REPO_NAME: 'POC-sample'  # The repository name for your Docker image
 
 options:
   substitutionOption: ALLOW_LOOSE
