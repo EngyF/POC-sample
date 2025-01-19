@@ -15,8 +15,8 @@ steps:
 
  
   # 3. Push JAR files to Artifact Registry (Google Cloud Storage)
-     - name: 'gcr.io/cloud-builders/gsutil'
-       args: [
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: [
       'cp', 
       '/workspace/target/*.jar', 
       'gs://poc-test-buckett'
@@ -28,7 +28,7 @@ steps:
     entrypoint: 'bash'
     args:
     - '-c'
-    - 'ls  workspace'
+    - 'ls  /workspace/'
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build', 
