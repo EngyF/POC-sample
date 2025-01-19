@@ -24,7 +24,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build', 
-      '-t', 'us-central1-docker.pkg.dev/poc-test-447813/${_IMAGE_NAME}:${_COMMIT_SHA}',
+      '-t', 'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_COMMIT_SHA}',
       '.'
     ]
     dir: '/workspace/'  # Set the directory to the Spring Boot project directory
