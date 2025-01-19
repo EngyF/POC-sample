@@ -24,11 +24,6 @@ steps:
     ]
 
   # 4. Build the Docker container image for the Spring Boot application
-  # - name: 'gcr.io/cloud-builders/gcloud'
-  #   entrypoint: 'bash'
-  #   args:
-  #   - '-c'
-  #   - 'ls  /workspace/'
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build', 
