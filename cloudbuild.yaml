@@ -24,7 +24,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build', 
-      '-t', 'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_COMMIT_SHA}',
+      '-t', 'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}',
       '.'
     ]
     dir: '/workspace/'  # Set the directory to the Spring Boot project directory
@@ -35,7 +35,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'push', 
-      'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_COMMIT_SHA}'
+      'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}'
     ]
 
   # 6. (Optional) Trigger Cloud Deploy (if deploying via Cloud Deploy)
@@ -48,16 +48,16 @@ steps:
       - '${_RELEASE_NAME}'  # Replace with your release name
       - '--delivery-pipeline=${_PIPELINE}'  # Replace with your Cloud Deploy pipeline name
       - '--region=us-central1'  # Specify your region, e.g., us-central1
-      - '--images=us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_COMMIT_SHA}'
+      - '--images=us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}'
 
 images:
-  - 'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_COMMIT_SHA}'
+  - 'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}'
 
 substitutions:
   _DEPLOYMENT_NAME: 'my-deployment'
   _IMAGE_NAME: 'poc-test'
   _PROJECT_ID: 'poc-test-447813'
-  _COMMIT_SHA: v1.0
+  _SHORT_SHA: '${SHORT_SHA}'  
   _RELEASE_NAME: 'v1.0.0'  # Specify your release version
   _PIPELINE: 'my-pipeline'  # The pipeline name created in Cloud Deploy
   _REPO_NAME: 'poc-test'  # The repository name for your Docker image
