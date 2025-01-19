@@ -25,7 +25,7 @@ steps:
       [
         "build",
         "-t",
-        "us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
+        "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
         ".",
       ]
     dir: "/workspace/" # Set the directory to the Spring Boot project directory
@@ -37,9 +37,8 @@ steps:
     args:
       [
         "push",
-        "us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
+        "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
       ]
-
 
   # 6. (Optional) Trigger Cloud Deploy (if deploying via Cloud Deploy)
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
@@ -51,10 +50,10 @@ steps:
       - "${_RELEASE_NAME}" # Replace with your release name
       - "--delivery-pipeline=${_PIPELINE}" # Replace with your Cloud Deploy pipeline name
       - "--region=us-central1" # Specify your region, e.g., us-central1
-      - "--images=${_IMAGE_NAME}=us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}"
+      - "--images=${_IMAGE_NAME}=us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}"
 
 images:
-  - "us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}"
+  - "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}"
 
 substitutions:
   _DEPLOYMENT_NAME: "my-deployment"
@@ -73,7 +72,7 @@ options:
 # steps:
 #   - name: "gcr.io/cloud-builders/git"
 #     entrypoint: "git"
-#     args: ["clone", "https://source.developers.google.com/p/poc-test-447813/r/POC-sample"]
+#     args: ["clone", "https://source.developers.google.com/p/${_PROJECT_ID}/r/POC-sample"]
 
 #   - name: "ubuntu"
 #     entrypoint: "bash"
