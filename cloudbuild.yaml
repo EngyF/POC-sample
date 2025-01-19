@@ -62,7 +62,7 @@ substitutions:
   _PROJECT_ID: "poc-test-447813"
   _SHORT_SHA: "${SHORT_SHA}"
   _RELEASE_NAME: "v1.0.0" # Specify your release version
-  _PIPELINE: "my-pipeline" # The pipeline name created in Cloud Deploy
+  _PIPELINE: "poc-pipeline" # The pipeline name created in Cloud Deploy
   _REPO_NAME: "poc-test" # The repository name for your Docker image
 
 options:
