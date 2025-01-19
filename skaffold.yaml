@@ -1,0 +1,11 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+metadata:
+  name: poc-test # Name of your application
+build:
+  artifacts:
+    - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test
+deploy:
+  kubectl:
+    manifests:
+      - k8s/*.yaml # Path to your Kubernetes manifests
