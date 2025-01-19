@@ -45,13 +45,13 @@ steps:
       - 'deploy'
       - 'releases'
       - 'create'
-      - '$_RELEASE_NAME'  # Replace with your release name
-      - '--delivery-pipeline=$_PIPELINE'  # Replace with your Cloud Deploy pipeline name
+      - '{$_RELEASE_NAME}'  # Replace with your release name
+      - '--delivery-pipeline={$_PIPELINE}'  # Replace with your Cloud Deploy pipeline name
       - '--region=us-central1'  # Specify your region, e.g., us-central1
-      - '--images=us-central1-docker.pkg.dev/poc-test-447813/$_IMAGE_NAME:$_COMMIT_SHA'
+      - '--images=us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_COMMIT_SHA}'
 
 images:
-  - 'us-central1-docker.pkg.dev/poc-test-447813/$_IMAGE_NAME:$_COMMIT_SHA'
+  - 'us-central1-docker.pkg.dev/poc-test-447813/${_REPO_NAME}/${_IMAGE_NAME}:${_COMMIT_SHA}'
 
 substitutions:
   _DEPLOYMENT_NAME: 'my-deployment'
