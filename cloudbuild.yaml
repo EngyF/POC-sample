@@ -58,7 +58,7 @@ substitutions:
   _COMMIT_SHA: v1.0
   _RELEASE_NAME: 'v1.0.0'  # Specify your release version
   _PIPELINE: 'my-pipeline'  # The pipeline name created in Cloud Deploy
-  _REPO_NAME: 'poc-sample'  # The repository name for your Docker image
+  _REPO_NAME: 'poc-test'  # The repository name for your Docker image
 
 options:
   substitutionOption: ALLOW_LOOSE
