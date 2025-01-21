@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: poc-test
-          image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:latest # Update with your image
+          image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:${_SHORT_SHA} # Update with your image
           ports:
             - containerPort: 8080
           resources:
@@ -26,3 +26,5 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "1"
+substitutions:
+_SHORT_SHA: "${SHORT_SHA}"
