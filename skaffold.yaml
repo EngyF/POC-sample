@@ -1,19 +1,21 @@
 apiVersion: skaffold/v4beta9
 kind: Config
 metadata:
-  name: poc-test # Name of your application
+  name: poc-test  # Name of your application
 build:
-  # artifacts:
-  #   - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test
   tagPolicy:
-  gitCommit: {}
-  local: {}
-  manifests:
+    gitCommit: {}  # This defines how your images are tagged
+  local: {}  # Local builds, can be removed if you're not using them
+  artifacts:
+    - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test  # Uncommented and fixed image path
+ 
+manifests:
   rawYaml:
-    - ./k8s/*
+    - ./k8s/*  # Path to your Kubernetes manifests
+ 
 deploy:
   kubectl:
     manifests:
-      - ./k8s/*.yaml # Path to your Kubernetes manifests
+      - ./k8s/*.yaml  # Path to your Kubernetes manifests
   logs:
-    prefix: container
+    prefix: container  # Fixed the prefix indentation
