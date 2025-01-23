@@ -9,10 +9,6 @@ build:
   artifacts:
     - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test  # Uncommented and fixed image path
  
-manifests:
-  rawYaml:
-    - ./k8s/*  # Path to your Kubernetes manifests
- 
 deploy:
   kubectl:
     manifests:
