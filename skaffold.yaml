@@ -8,16 +8,16 @@ build:
   local: {} # Local builds, can be removed if you're not using them
   artifacts:
     - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test # Uncommented and fixed image path
-
+ 
 deploy:
   kubectl:
     manifests:
       - ./k8s/*.yaml # Path to your Kubernetes manifests
   logs:
     prefix: container # Fixed the prefix indentation
-
+ 
 profiles:
   - name: target-1 # Define the profile here
     build:
       artifacts:
-        - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test # Example specific to this profile
+        - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/target-1 # Example specific to this profile
