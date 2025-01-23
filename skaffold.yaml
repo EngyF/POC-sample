@@ -15,3 +15,9 @@ deploy:
       - ./k8s/*.yaml # Path to your Kubernetes manifests
   logs:
     prefix: container # Fixed the prefix indentation
+
+profiles:
+  - name: target-1 # Define the profile here
+    build:
+      artifacts:
+        - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/target-1 # Example specific to this profile
