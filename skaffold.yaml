@@ -26,9 +26,9 @@ deploy:
 # Profiles section (optional: can be used for specific build configurations)
 profiles:
   - name: target-1  # Profile name, you can create specific builds for this profile
-    build:
-      artifacts:
-        - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/target-1  # Image path for this profile
+    # build:
+    #   artifacts:
+    #     - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/target-1  # Image path for this profile
       # Uncomment the next lines if you want to disable cache for this profile
       # cache:
       #   disabled: true
