@@ -7,7 +7,7 @@ build:
     gitCommit: {} # This defines how your images are tagged
   local: {} # Local builds, can be removed if you're not using them
   artifacts:
-    - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:${_SHORT_SHA} # Uncommented and fixed image path
+    - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test # Uncommented and fixed image path
 
 deploy:
   kubectl:
@@ -20,7 +20,7 @@ profiles:
   - name: target-1 # Define the profile here
     build:
       artifacts:
-         - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:${_SHORT_SHA} # Example specific to this profile
+         - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test # Example specific to this profile
       # cache:
         # disabled: true # Disable caching for global builds
 
