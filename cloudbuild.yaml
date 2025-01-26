@@ -17,18 +17,21 @@ steps:
         "/workspace/target/*.jar",
         "gs://poc-test-buckett",
         #'poc-test-buckett'  # Replace with your Artifact Registry bucket
-      ]
+      ]  
 
-  # 4. Build the Docker container image for the Spring Boot application
+
+ # 4. Build the Docker container image for the Spring Boot application without cache
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
         "build",
+        "--no-cache",  # Disable Docker caching
         "-t",
         "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
         ".",
       ]
     dir: "/workspace/" # Set the directory to the Spring Boot project directory
+
 
   #list all locally available images for logging
   - name: "gcr.io/cloud-builders/docker"
