@@ -25,7 +25,7 @@ deploy:
 
 # Profiles section (optional: can be used for specific build configurations)
 profiles:
-  - name: target-1  # Profile name, you can create specific builds for this profile
+  - name: poc-pipeline-target-1  # Profile name, you can create specific builds for this profile
     build:
       artifacts:
         - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test  # Image path for this profile
