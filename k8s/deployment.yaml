@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
         - name: poc-test
-          image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:${IMAGE_TAG} 
+          image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:${_SHORT_SHA} 
           ports:
             - containerPort: 8080
           resources:
             requests:
-              memory: "256Mi"
+              memory: "256Mi"s
               cpu: "500m"
             limits:
               memory: "512Mi"
