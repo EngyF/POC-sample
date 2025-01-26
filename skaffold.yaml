@@ -20,10 +20,7 @@ profiles:
   - name: target-1 # Define the profile here
     build:
       artifacts:
-        - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/target-1 # Example specific to this profile
-      # /////what i add from chatGbt////
-  build:
-    artifacts:
-      - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test
-    cache:
-     disabled: true
+       - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/target-1 # Example specific to this profile
+      cache:
+        disabled: true 
+
