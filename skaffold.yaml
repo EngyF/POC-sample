@@ -15,10 +15,7 @@ deploy:
       - ./k8s/*.yaml # Path to your Kubernetes manifests
   logs:
     prefix: container # Fixed the prefix indentation
-
-substitutions:
-  _IMAGE_TAG: "{{.GIT_COMMIT}}" 
-
+    
 profiles:
   - name: target-1 # Define the profile here
     build:
