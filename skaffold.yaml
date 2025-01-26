@@ -23,3 +23,5 @@ profiles:
        - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test # Example specific to this profile
       # cache:
         # disabled: true # Disable caching for global builds
+
+#skaffold 
