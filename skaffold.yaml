@@ -1,34 +1,23 @@
 apiVersion: skaffold/v2beta27
 kind: Config
 metadata:
-  name: poc-test  # Name of your application
-
-# Build configuration
+  name: poc-test 
 build:
   tagPolicy:
-    gitCommit: {}  # This defines how your images are tagged (using Git commit hash)
-  
-  # Local build settings, can be removed if you're not using them
+    gitCommit: {}
   local: {}
-  
-  # Artifacts (the images to be built)
   artifacts:
-    - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test  # Image path for the artifact
+    - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test 
 
-# Deploy configuration
 deploy:
   kubectl:
     manifests:
-      - ./k8s/*.yaml  # Path to your Kubernetes manifests
+      - ./k8s/*.yaml 
   logs:
-    prefix: container  # Prefix for container logs
-
-# Profiles section (optional: can be used for specific build configurations)
+    prefix: container 
+ 
 profiles:
-  - name: target-1  # Profile name, you can create specific builds for this profile
-    # build:
-    #   artifacts:
-    #     - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/target-1  # Image path for this profile
-      # Uncomment the next lines if you want to disable cache for this profile
-      # cache:
-      #   disabled: true
+  - name: target-1 
+    build:
+      artifacts:
+       - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test 
