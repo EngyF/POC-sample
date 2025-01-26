@@ -8,7 +8,10 @@ build:
   local: {} # Local builds, can be removed if you're not using them
   artifacts:
     - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test # Uncommented and fixed image path
- 
+  cache:
+    disabled: true 
+
+
 deploy:
   kubectl:
     manifests:
@@ -21,6 +24,4 @@ profiles:
     build:
       artifacts:
        - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/target-1 # Example specific to this profile
-      cache:
-        disabled: true 
-
+    
