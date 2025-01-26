@@ -86,11 +86,9 @@ options:
 #   - name: "gcr.io/cloud-builders/git"
 #     entrypoint: "git"
 #     args: ["clone", "https://source.developers.google.com/p/${_PROJECT_ID}/r/POC-sample"]
-
 #   - name: "ubuntu"
 #     entrypoint: "bash"
 #     args: ["-c", "ls -R /workspace"]  # This will list the contents of the /workspace directory
-
 #   - name: 'gcr.io/cloud-builders/mvn'
 #     entrypoint: 'mvn'
 #     args: ['clean', 'package']
