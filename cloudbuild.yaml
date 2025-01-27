@@ -22,15 +22,17 @@ steps:
 
  # 4. Build the Docker container image for the Spring Boot application without cache
   - name: "gcr.io/cloud-builders/docker"
+   - name: "gcr.io/cloud-builders/docker"
     args:
       [
         "build",
-        "--no-cache",  # Disable Docker caching
+        "--no-cache", 
         "-t",
         "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
-        
+        ".",
       ]
-    dir: "/workspace/" # Set the directory to the Spring Boot project directory
+    dir: "/workspace/" 
+ # Set the directory to the Spring Boot project directory
 
 
   #list all locally available images for logging
