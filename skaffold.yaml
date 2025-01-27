@@ -9,7 +9,7 @@ build:
   local: {} # Local builds, can be removed if you're not using them
   artifacts:
     - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test # Uncommented and fixed image path
-      tag: "${_SHORT_SHA}"
+      
 
 deploy:
   kubectl:
@@ -25,4 +25,4 @@ profiles:
        - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test # Example specific to this profile
       # cache:
         # disabled: true # Disable caching for global builds
-        #karim
+        
