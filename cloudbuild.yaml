@@ -42,10 +42,10 @@ steps:
     args:
       [
         "push",
-        "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
-      ]
-
-  # 6. (Optional) Trigger Cloud Deploy (if deploying via Cloud Deploy)
+       "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
+      ".",
+    ]
+      # 6. (Optional) Trigger Cloud Deploy (if deploying via Cloud Deploy)
 
   - name: 'google/cloud-sdk:latest'
     entrypoint: 'sh'
