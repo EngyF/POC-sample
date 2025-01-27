@@ -28,7 +28,7 @@ steps:
         "--no-cache",  # Disable Docker caching
         "-t",
         "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
-        ".",
+        
       ]
     dir: "/workspace/" # Set the directory to the Spring Boot project directory
 
