@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: poc-test
-          image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:${TAG}     # Update with your image
+          image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:$(TAG)     # Update with your image
           ports:
             - containerPort: 8080
           resources:
