@@ -64,6 +64,18 @@ steps:
   #     - "--region=us-central1" # Specify your region, e.g., us-central1
   #     - "--images=${_IMAGE_NAME}=us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}"
 
+       steps:
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: "bash"
+    args:
+      - -c
+      - |
+        export _DEPLOYMENT_NAME=my-deployment
+        export _IMAGE_NAME=poc-test
+        export _PROJECT_ID=poc-test-447813
+        export _REPO_NAME=poc-test
+        export _IMAGE_TAG=${SHORT_SHA}
+        envsubst < deployment.yaml | kubectl apply -f -
 images:
   - "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}"
 
