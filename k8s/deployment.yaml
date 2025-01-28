@@ -29,6 +29,6 @@ spec:
           env:
             - name: GIT_COMMIT
               valueFrom:
-              configMapKeyRef:
-                name: git-commit
-                key: sha # Update with your image
+                configMapKeyRef:
+                  name: git-commit
+                  key: sha # Update with your image
