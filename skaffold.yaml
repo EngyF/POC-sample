@@ -5,6 +5,7 @@ metadata:
 build:
   tagPolicy:
     gitCommit: {} # This defines how your images are tagged
+      variant: abbrevCommit # Short Git commit SHA
   local: {} # Local builds, can be removed if you're not using them
   artifacts:
     - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test # Uncommented and fixed image path
