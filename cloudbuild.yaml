@@ -22,7 +22,6 @@ steps:
 
  # 4. Build the Docker container image for the Spring Boot application without cache
   - name: "gcr.io/cloud-builders/docker"
-   - name: "gcr.io/cloud-builders/docker"
     args:
       [
         "build",
@@ -44,8 +43,8 @@ steps:
     args:
       [
         "push",
-       "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
-      ".",
+        "us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_SHORT_SHA}",
+        ".",
     ]
       # 6. (Optional) Trigger Cloud Deploy (if deploying via Cloud Deploy)
 
