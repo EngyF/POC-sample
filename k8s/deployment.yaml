@@ -16,11 +16,7 @@ spec:
     spec:
       containers:
         - name: poc-test
-<<<<<<< HEAD
-          image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:${_IMAE_TAG} # Update with your image
-=======
-          image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:latest
->>>>>>> 0aab1ee4c8262594a58a5565eec8d4ad3871ace1
+          image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test:{{TAG}}     # Update with your image
           ports:
             - containerPort: 8080
           resources:
