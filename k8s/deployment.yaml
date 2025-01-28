@@ -26,9 +26,9 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "1"
-        env:
-          - name: GIT_COMMIT
-            valueFrom:
-            configMapKeyRef:
-              name: git-commit
-              key: sha # Update with your image
+          env:
+            - name: GIT_COMMIT
+              valueFrom:
+              configMapKeyRef:
+                name: git-commit
+                key: sha # Update with your image
