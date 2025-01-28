@@ -55,6 +55,7 @@ steps:
     - |
       TAG=$(git rev-parse --short HEAD)
       export TAG
+      envsubst < deployment.yaml > deployment-with-tag.yaml
       gcloud deploy releases create 'app-release-${SHORT_SHA}' --delivery-pipeline=${_PIPELINE} --region=us-central1 --skaffold-file=skaffold.yaml 
   # - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
   #   entrypoint: "gcloud"
