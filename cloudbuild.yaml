@@ -90,6 +90,7 @@ substitutions:
   _RELEASE_NAME: "v-${SHORT_SHA}" # Specify your release version
   _PIPELINE: "poc-pipeline" # The pipeline name created in Cloud Deploy
   _REPO_NAME: "poc-test" # The repository name for your Docker image
+  __IMAGE_TAG:"${SHORT_SHA}"
    
 
 options:
