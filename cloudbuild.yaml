@@ -53,7 +53,7 @@ steps:
     - -xe
     - -c
     - |
-      SHORT_SHA=$(git rev-parse --short HEAD)
+      TAG=$(git rev-parse --short HEAD)
       gcloud deploy releases create 'app-release-${SHORT_SHA}' --delivery-pipeline=${_PIPELINE} --region=us-central1 --skaffold-file=skaffold.yaml
   # - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
   #   entrypoint: "gcloud"
