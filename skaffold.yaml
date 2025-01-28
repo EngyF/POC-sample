@@ -22,8 +22,3 @@ profiles:
       artifacts:
         - image: us-central1-docker.pkg.dev/poc-test-447813/poc-test/poc-test # Example specific to this profile
       # cache:
-<<<<<<< HEAD
-        # disabled: true # Disable caching for global builds
-=======
-      # disabled: true # Disable caching for global builds
->>>>>>> ac351e924a474fbebcb02cbfe01aff150663c341
